@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Oswald:wght@200&family=Playfair+Display&family=Roboto+Mono:wght@100&display=swap');
+</style>
+h1{
+	font-weight:400 ;
+    font-family: 'Lobster', sans-serif;
+    font-family: 'Oswald', sans-serif;
+    font-family: 'Playfair Display', serif;
+    font-family: 'Roboto Mono', monospace;
+
+}
+p{
+	text-align: justify;
+	text-indent:24px ;
+	line-height: 24px;
+}
+
+
+}
+h3{
+
+}
+.img1{
+	float: right;
+	margin-left: 20px;
+}
+.f1{
+	float: right;
+	width: 300px;
+	border: solid 1px lightgray;
+	padding: 10px;
+}
+f2{
+	float: right;
+	width: 300px;
+	border: solid 1px lightgray;
+	padding: 10px;
+}

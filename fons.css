@@ -1,0 +1,62 @@
+ @import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@100&family=Pixelify+Sans&family=Seymour+One&family=Ubuntu+Condensed&display=swap');
+
+body{
+	background-color: lightgreen;
+}
+p{
+	font-size: 40px;
+}
+.p1{
+	color: pink;
+	background: linear-gradient(purple,violet);
+	text-align: center;
+}
+
+.p2{
+	font-family: cursive;
+	color: orange;
+}
+.p3{
+	font-family: "Montserrat Alternates";	
+
+}
+.p4{
+	font-family: "Pixelify Sans";
+	
+}
+.p5{
+	font-family: "Seymour One";
+
+}
+.p6{
+	font-family: "Ubuntu Condensed";
+
+}
+.p7{
+	font-family: "Rubik Distressed";
+
+}
+.p8{
+	text-decoration: underline;
+	text-decoration-color: red;
+	text-decoration-style: wavy;
+	text-emphasis-position: under;
+
+}
+.p9{
+	color: fuchsia;
+	text-decoration: underline;
+	text-decoration-color: darkred;
+	text-decoration-style: dashed;
+	text-emphasis-position: under;
+
+}
+.p10{
+	text-shadow: 0 0 10px yellow;
+
+}
+.p11{
+	color: pink;
+	text-shadow: 2px 2px red, 3px 3px plum;
+
+}
