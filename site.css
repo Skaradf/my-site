@@ -142,9 +142,32 @@ section{
 }
 .menu{
   color: white;
+  list-style-type: none;
 }
 .video{
   border-radius: 10px;
    width: 100%;
 
+}
+
+@media(max-width:1000px){
+  .title {
+    font-size:50px ;
+     }
+     .menu{
+      font-size: 11px;
+
+
+     }
+     .f1{
+         width: 300px;
+         height: 245px;
+     }
+     .button-85{
+      font-size: 10px;
+     }
+     article{
+      font-size: 10px;
+      
+     }
 }
