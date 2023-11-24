@@ -1,6 +1,6 @@
  @import url('https://fonts.googleapis.com/css2?family=Alumni+Sans+Collegiate+One&family=Comforter&family=Oi&family=Rubik+Bubbles&family=Rubik+Distressed&display=swap');
 body{
-	background-color: purple;
+	background-color: lightblue;
 }
   p{ font-size:40px;
 }
@@ -18,7 +18,7 @@ body{
 	font-family:'Alumni sans Colegiant One';
 }
 .p4{
-	font-family: comforter;
+	font-family: "comforter";
 }
 .p5{
 	font-family: Oi;
