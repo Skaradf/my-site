@@ -1,4 +1,8 @@
- @import url('https://fonts.googleapis.com/css2?family=Alumni+Sans+Collegiate+One&family=Comforter&family=Oi&family=Rubik+Bubbles&family=Rubik+Distressed&display=swap');
+ 
+
+@import url('https://fonts.googleapis.com/css2?family=Caveat&family=Montserrat+Alternates:wght@100&family=Pacifico&family=Playfair+Display:ital@1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&family=EB+Garamond&family=Marck+Script&family=Pacifico&family=Unbounded:wght@200&display=swap');
 body{
 	background-color: lightblue;
 }
@@ -10,24 +14,24 @@ body{
 	text-align: center;
 }
 .p2{
-	font-family: corsive;
+	font-family: cursive;
 	color: orange;
 	font-weight:700 ;
 }
 .p3{
-	font-family:'Alumni sans Colegiant One';
+	font-family:  sans-serif;
 }
 .p4{
-	font-family: "comforter";
+	font-family: 'EB Garamond', serif;
 }
 .p5{
-	font-family: Oi;
+	font-family: 'Marck Script', cursive;
 }
 .p6{
-	font-family:" Rubik Bubbles";
+	font-family: 'Pacifico', cursive;
 }
 .p7{
-	font-family: "Rubik Distresed";
+	font-family: 'Unbounded', sans-serif;
 }
 .p8{
 	text-decoration:underline;
@@ -42,9 +46,9 @@ body{
 
 }
 .p10{
-	text-shadow: 0 0 10px gray;
+	text-shadow: 0 0 10px black;
 }
 .p11{
-	color: blueviolet;
+	color: greenyellow;
 	text-shadow: 2px -2px red, 3px -3px plum;
 }
