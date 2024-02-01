@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Power </title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Tektur&display=swap');
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(#281946, #120657);
+            color: #fff;
+            font-family: 'Tektur', sans-serif;
+            text-align: center;
+        }
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+        }
+        .level, .power {
+            width: 50%;
+            padding: 20px;
+        }
+        .power {
+            border-left: 1px solid #fff;
+        }
+        p {
+            margin-top: 0;
+            font-size: 24px;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        input {
+            margin: 10px 0;
+            padding: 10px;
+            border: none;
+            background-color: #ffffff;
+            color: #000000;
+            text-align: center;
+        }
+        .btn {
+            align-items: center;
+            background-image: linear-gradient(144deg, #000000, #000000 50%, #000000);
+            border: 0;
+            border-radius: 8px;
+            box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
+            color: #FFFFFF;
+            font-family: 'Tektur', sans-serif;
+            font-size: 20px;
+            line-height: 1em;
+            padding: 10px;
+            text-decoration: none;
+            user-select: none;
+            cursor: pointer;
+        }
+        .btn:active, .btn:hover {
+            outline: none;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        function grades(){
+            let grade = +document.grade_level.a.value;
+            let answer = document.getElementById("level");
+            switch(grade){
+                case 1:
+                case 2:
+                case 3:
+                    string='Початковий';
+                    break;
+                case 4:
+                case 5:
+                case 6:
+                    string='Середній';
+                    break;
+                case 7:
+                case 8:
+                case 9:
+                    string='Достатній';
+                    break;
+                case 10:
+                case 11:
+                case 12:
+                    string='Високий';
+                    break;
+                default:
+                    string='Такої оцінки не існує.';
+            }
+            answer.innerHTML = string;
+        }
+    </script>
+    <div class="container">
+        <div class="level">
+            <p>Дізнайся, на якому рівні ти навчаєшся</p>
+            <form name="grade_level" action="javascript:grades()">
+                Введи свій середній бал: <input class="grade" name="a" type="text" value="" size="4">
+                <div>
+                    <input class="btn" type="submit" value="Дізнатися відповідь">
+                    <input class="btn" type="reset" name="reset" value="Скинути">
+                </div>
+            </form>
+            <p>Твій рівень: <span id="level"></span></p>
+        </div>
+    </div>
+</body>
+</html>

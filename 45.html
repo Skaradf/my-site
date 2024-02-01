@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Перевірка сезону</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Tektur&display=swap');
+        body {
+            text-align: center;
+            min-height: 100vh;
+            padding-top: 100px;
+            background: linear-gradient(#281946, #120657);
+            color: #fff;
+            font-family: 'Tektur', sans-serif;
+        }
+
+        .btn {
+            appearance: button;
+            background-color: #8e28ec;
+            font-family: 'Tektur', sans-serif;
+        }
+
+        button {
+            background-color: #8e28ec;
+            color: rgb(255, 255, 255);
+            font-family: 'Tektur', sans-serif;
+            
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #6a1b9a;
+        }
+        .result.innerHTML{
+            font-size: 15px;
+        }
+
+    </style>
+</head>
+
+<body>
+    <h2>Введіть число від 1 до 12, щоб дізнатися відповідну пору року</h2>
+    <input type="number" id="seasonInput">
+    <button onclick="checkSeason()">Перевірити пору року</button>
+    <p id="seasonResult"></p>
+
+    <script>
+        function checkSeason() {
+            let season = document.getElementById('seasonInput').value;
+            let result = document.getElementById('seasonResult');
+            if (season >= 1 && season <= 2) {
+                result.innerHTML = "Це число відповідає місяцю в зимовий сезон";
+            } else if (season >= 3 && season <= 5) {
+                result.innerHTML = "Це число відповідає місяцю весняного сезону";
+            } else if (season >= 6 && season <= 8) {
+                result.innerHTML = "Це число відповідає місяцю літнього сезону";
+            } else if (season >= 9 && season <= 11) {
+                result.innerHTML = "Це число відповідає місяцю осіннього сезону";
+            } else if (season = 12) {
+                result.innerHTML = "Це число відповідає місяцю в зимовий сезон";
+            }else {
+                result.innerHTML = "Це недійсно! Будь ласка спробуйте ще раз!";
+            }
+        }
+    </script>
+</body>
+
+</html>

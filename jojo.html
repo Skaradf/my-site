@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Квадрати</title>
+  <style>
+    body{
+      min-height: 100vh;
+            background: linear-gradient(#281946, #120657);
+            color: #fff;
+    }
+    canvas {
+      border: 1px solid #000;
+    }
+  </style>
+</head>
+<body>
+  <canvas id="myCanvas" width="10000" height="10000"></canvas>
+  <script>
+    let canvas = document.getElementById("myCanvas");
+    let ctx = canvas.getContext("2d");
+
+    let numSquares = +prompt("Введіть кількість квадратів", 10000);
+
+    for (let i = 0; i < numSquares; i++) {
+      let x = Math.floor(Math.random() * canvas.width);
+      let y = Math.floor(Math.random() * canvas.height);
+      let size = Math.floor(Math.random() * 50) + 20; 
+      ctx.fillStyle = "#" + Math.floor(Math.random()*16777215).toString(16); 
+      ctx.fillRect(x, y, size, size);
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Факторіал числа</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Tektur&display=swap');
+        html {
+            height: 100%;
+        }
+
+        body {
+            min-height: 100vh;
+            background: linear-gradient(#281946, #120657);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            color: #fff;
+            font-family: 'Tektur', sans-serif;
+        }
+
+        .factorial {
+            text-align: center;
+            margin-top: 30px;
+            color: #fff;
+            font-family: 'Tektur', sans-serif;
+        }
+
+        input {
+            width: 100%;
+            font-family: 'Tektur', sans-serif;
+            padding: 10px 0;
+            font-size: 16px;
+            
+            margin-bottom: 20px;
+            border: none;
+            border-bottom: 1px solid #070707;
+            outline: none;
+            background: transparent;
+            color: #fff;
+        }
+
+        .btn {
+            background-color: #8e28ec;
+            border: 0;
+            border-radius: 8px;
+            box-shadow: 0 15px 30px -5px rgba(151, 65, 252, 0.2);
+            color: #FFFFFF;
+            font-size: 20px;
+            padding: 10px;
+            text-decoration: none;
+            cursor: pointer;
+            margin-right: 10px;
+            font-family: 'Tektur', sans-serif;
+        }
+
+        .btn:active,
+        .btn:hover {
+            outline: 0;
+            color: #fff;
+        }
+
+        #answer2 {
+            font-size: 20px;
+            font-weight: bold;
+            color: #fff;
+            margin-top: 20px;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="factorial">
+        <h2 style="font-weight: 900; font-size: 24px; margin-bottom: 15px;">Факторіал числа n</h2>
+        <form name="factorial" action="javascript:factorial()">
+            Число n дорівнює<input class="side" name="n" type="text" value="" size="4">
+             <input class="btn" type="submit" value="Розрахувати">
+             <input class="btn" type="reset" name="reset" value="Скинути">
+        
+          Відповідь: <span id="answer2"></span><br/>
+        
+        </form>
+    </div>
+
+    <script>
+        function factorial(){
+let n=+document.factorial.n.value;
+let answer=document.getElementById("answer2");
+      let result=1;
+      for(let i =1; i<=n; i++){
+      result=i*result
+      }
+      string=`Факторіал числа ${n} дорівнює ${result}`
+      
+answer.innerHTML = string;
+    }
+    </script>
+</body>
+</html>

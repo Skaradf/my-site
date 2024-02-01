@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Tektur&display=swap');
+
+        body {
+            font-size: 50px;
+            font-family: 'Tektur', sans-serif;
+            min-height: 100vh;
+            background: linear-gradient(#281946, #120657);
+            color: #fff;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .btn {
+            background-color: #8e28ec;
+            color: #FFFFFF;
+            cursor: pointer;
+            font-family: din-round,sans-serif;
+            font-size: 15px;
+            font-weight: 700;
+            letter-spacing: .8px;
+            outline: none;
+            user-select: none;
+            white-space: nowrap;
+            padding: 13px 16px;
+            margin: 0 10px; 
+            border: none;
+            border-radius: 16px;
+            transition: filter .2s;
+        }
+        
+        .input {
+            width: 100%;
+            padding: 10px 0;
+            font-size: 30px; /* Увеличение размера шрифта */
+            color: #070707;
+            margin-bottom: 30px;
+            border: none;
+            border-bottom: 1px solid #070707;
+            outline: none;
+            background: transparent;
+            text-align: center; 
+        }
+
+        #prompt {
+            text-align: center;
+        }
+
+        .btn-container {
+            display: flex;
+            justify-content: space-between; 
+            width: 100%;
+            max-width: 300px; 
+        }
+    </style>
+</head>
+<body>
+    <div id="prompt">What kind of letter do you need?</div>
+    <input type="text" id="letterInput" class="input">
+    <div class="btn-container">
+        <button class="btn" onclick="findLetter()">Find Position</button>
+        <button class="btn" onclick="resetInput()">Reset</button>
+    </div>
+    <p id="positionDisplay"></p>
+
+    <script>
+        function findLetterPosition(letter) {
+          var lowercaseLetter = letter.toLowerCase();
+          var alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
+          var position = alphabet.indexOf(lowercaseLetter) + 1;
+          return position;
+        }
+
+        function findLetter() {
+          var inputLetter = document.getElementById('letterInput').value; 
+          var position = findLetterPosition(inputLetter);
+          if (position > 0) {
+            document.getElementById('positionDisplay').innerHTML = "The position of the letter '" + inputLetter + "' in the alphabet is " + position + ".";
+          } else {
+            document.getElementById('positionDisplay').innerHTML = "The letter '" + inputLetter + "' is not found in the alphabet.";
+          }
+        }
+
+        function resetInput() {
+          document.getElementById('letterInput').value = '';
+          document.getElementById('positionDisplay').innerHTML = '';
+          
+        }
+    </script>
+    
+</body>
+</html>

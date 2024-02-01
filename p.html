@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> triangle</title>
+    <style type="text/css">
+        @import url('https://fonts.googleapis.com/css2?family=Tektur&display=swap');
+		div{
+			font-size: 35px; 
+			color: rgb(255, 255, 255);
+			text-align: center;
+            margin-top: 100px;
+            background-color: rgba(7, 73, 131, 0.922);
+            border-radius: 10px;
+            width: 80%;
+            background-image: url(https://www.poznavayka.org/wp-content/uploads/2015/02/matematika-i-kosmos.jpg);
+
+		}
+		.side{
+			width: 50px;
+			height: 30px;
+			font-size: 36px;
+			text-align: center;
+         margin-top: 10px;
+
+		}
+       
+body{
+    
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-family: 'Tektur', sans-serif;
+    min-height: 100vh;
+            background: linear-gradient(#281946, #120657);
+            color: #fff;
+}
+
+
+.btn {
+  appearance: none;
+  background-color: transparent;
+  border: 2px solid #1A1A1A;
+  border-radius: 15px;
+  box-sizing: border-box;
+  color: #ffffff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: Roobert,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+  font-size: 16px;
+  font-weight: 600;
+  line-height: normal;
+  margin: 0;
+  min-height: 60px;
+  min-width: 0;
+  outline: none;
+  padding: 16px 24px;
+  text-align: center;
+  text-decoration: none;
+  transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  margin-top: 10px;
+  will-change: transform;
+  font-family: 'Tektur', sans-serif;
+}
+
+.btn:disabled {
+  pointer-events: none;
+}
+
+.btn:hover {
+  color: #fff;
+  background-color: #1A1A1A;
+  box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+  transform: translateY(-2px);
+}
+
+.btn:active {
+  box-shadow: none;
+  transform: translateY(0);
+}
+h1{
+        font-size: 40px;
+    }	
+
+	</style>
+</head>
+<body>
+  <center>
+    <div>
+      <h1>Площа та периметр прямокутного трикутника</h1>
+      <form>
+          Довжина першого катета дорівнює <input class="side" id="triangle_f_a" type="number" value="" size="4"><br>
+          Довжина другого катета дорівнює <input class="side" id="triangle_f_b" type="number" value="" size="4"><br>
+          Довжина гіпотенузи дорівнює <input class="side" id="triangle_f_c" type="number" value="" size="4"><br>
+          <button type="button" class="btn" onclick="right_triangle()">Розрахувати</button>
+          <button type="reset" class="btn" name="reset">Скинути</button>
+     </form>
+     <p id="area1"></p>
+     <p id="perimeter1"></p>
+  </div>
+  <div>
+      <h1>Розрахунок площі та периметра прямокутника</h1> 
+      <form>
+          Довжина прямокутника: <input class="side" id="rectangle_a" type="number" value="" size="4"><br>
+          Ширина прямокутника: <input class="side" id="rectangle_b" type="number" value="" size="4"><br>          
+          <button type="button" class="btn" onclick="rectangle()">Розрахувати</button>
+          <button type="reset" class="btn" name="reset">Скинути</button>
+      </form>
+      <p id="area2"></p>
+      <p id="perimeter2"></p>
+  </div>
+</center>
+
+<script>
+  function right_triangle(){
+      let a = +document.getElementById('triangle_f_a').value;
+      let b = +document.getElementById('triangle_f_b').value;
+      let c = +document.getElementById('triangle_f_c').value;
+      let S = a * b / 2;
+      let perimeter = a + b + c;
+      let resultArea = document.getElementById('area1');
+      let resultPerimeter = document.getElementById('perimeter1');
+      if (a * a + b * b === c * c) {
+          resultArea.textContent = `Площа прямокутного трикутника зі сторонами ${a} та ${b} дорівнює: ` + S;
+          resultPerimeter.textContent = `Периметр прямокутного трикутника зі сторонами ${a} та ${b} дорівнює: ` + perimeter;
+      } else {
+          resultArea.textContent = 'Такого прямокутного трикутника не існує';
+          resultPerimeter.textContent = '';
+      }
+  }
+
+  function rectangle(){
+      let a = +document.getElementById('rectangle_a').value;
+      let b = +document.getElementById('rectangle_b').value;
+      let S = a * b;
+      let perimeter = 2 * (a + b);
+      let resultArea = document.getElementById('area2');
+      let resultPerimeter = document.getElementById('perimeter2');
+      resultArea.textContent = `Площа прямокутника зі сторонами ${a} та ${b} дорівнює: ` + S;
+      resultPerimeter.textContent = `Периметр прямокутника зі сторонами ${a} та ${b}  дорівнює: ` + perimeter;
+  }
+</script>
+</body>
+</html>

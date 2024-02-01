@@ -1,0 +1,42 @@
+nav, aside{
+	width: 20%;
+
+	
+	float: left;
+}
+main{
+	width: 60%;
+	background-color: white;
+	
+	float: left;
+}
+header{
+	height: 400px;
+	width: 1500px;
+	background-color: blue;
+
+	
+}
+.button-85{
+  font-family: 'Comfortaa';
+  font-size: 15px;
+  color: #ffffff !important;
+  padding: 15px 23px;
+  border-radius: 5px;
+  border: 2px hidden #000000;
+  background: #5b8732;
+  background: linear-gradient(to top, #5b8732, #69ff13);
+}
+.button-85:hover {
+  color: #cccccc !important;
+  background: #12e819;
+  background: linear-gradient(to top, #12e819, #2a6d1c);
+}
+body{
+	 background-color:lightgrey;
+}
+.h5{
+	font-size: 20px;
+}	
+
+

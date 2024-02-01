@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Tektur&display=swap" rel="stylesheet">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background: linear-gradient(#281946, #120657);
+            color: #000000;
+            font-family: 'Tektur', sans-serif;
+            font-size: 24px; /* Increase the overall font size */
+        }
+
+        #ageForm {
+            text-align: center; /* To center align the form content */
+            background-color: #f4f4f4;
+            padding: 40px; /* Increase the padding for the form */
+            border-radius: 10px; /* Increase the border radius */
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); /* Increase the box shadow */
+        }
+
+        input[type="text"],
+        button {
+            font-size: 18px; /* Increase the font size for input and button */
+            padding: 10px; /* Increase the padding for input and button */
+            margin: 10px; /* Add margin to the input and button */
+        }
+
+        button {
+            background: linear-gradient(144deg, #000000, #000000 50%, #000000);
+            color: #fff3f3;
+            border: none; /* Remove the default button border */
+            border-radius: 5px; /* Add a border radius to the button */
+            cursor: pointer; /* Add a pointer cursor to the button */
+        }
+    </style>
+    <title>Age Verification</title>
+</head>
+
+<body>
+    <form id="ageForm">
+        <h1>Вікова перевірка</h1>
+        <label for="ageInput">Введіть свій вік: </label>
+        <input type="text" id="ageInput" name="ageInput">
+        <br>
+        <button type="button" onclick="checkAge()">Відправити</button>
+        <p id="message"></p>
+    </form>
+
+    <script>
+        function checkAge() {
+            let age = parseInt(document.getElementById('ageInput').value);
+            let messageElement = document.getElementById('message');
+            if (!isNaN(age) && age > 17 && age < 101) {
+                messageElement.textContent = 'Ласкаво просимо!';
+            } else {
+                messageElement.textContent = 'Ваш вік не відповідає вимогам.';
+            }
+            // Clear the input after displaying the message
+            document.getElementById('ageInput').value = '';
+        }
+    </script>
+</body>
+
+</html>

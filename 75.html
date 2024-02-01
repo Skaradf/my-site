@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Героям слава числа</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Tektur&display=swap');
+        body{
+            min-height: 100vh;
+            background: linear-gradient(#281946, #120657);
+            color: #fff;
+            font-family: 'Tektur', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            text-align: center;
+        }
+
+        input[type="number"] {
+            width: 100px;
+            margin-right: 10px;
+            padding: 5px;
+            font-size: 16px;
+            color: #000000;
+            font-family: 'Tektur', sans-serif;
+        }
+        button {
+            background-image: linear-gradient(144deg, #6e00ff, #ff00dc);
+            color: #fff;
+            box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
+            padding: 20px 80px;
+            margin: 10px;
+            font-family: 'Tektur', sans-serif;
+            border: none;
+            cursor: pointer;
+            transition: transform 0.2s ease-in-out;
+        }
+
+        button:hover {
+            transform: scale(1.1);
+        }
+
+        button + button {
+            margin-left: 10px; /* Додали відступ між двома кнопками */
+        }
+    </style>
+</head>
+<body>
+    <h2 style="font-weight: 900; font-size: 50px; margin-bottom: 15px;">Скільки привітань хочеш? </h2>
+    <input type="number" id="numberOfGreetings" name="numberOfGreetings" value="10">
+    <button onclick="writeGreetings()">Розпочати</button>
+    <button onclick="clearGreetings()">Скинути</button>
+    <p id="greetings"></p>
+
+    <script>
+        function writeGreetings() {
+            let number = +document.getElementById('numberOfGreetings').value;
+            let greetingString = '';
+            for (let i = 1; i <= number; i++) {
+                greetingString += i + ") Слава Україні! <br>";
+            }
+            greetingString += 'Героям слава!';
+            document.getElementById('greetings').innerHTML = greetingString;
+        }
+
+        function clearGreetings() {
+            document.getElementById('greetings').innerHTML = '';
+        }
+    </script>
+</body>
+</html>

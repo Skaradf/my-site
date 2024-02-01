@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Вычисление числа Фібоначчі</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Tektur&display=swap');
+        body, html {
+          height: 100%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin: 0;
+          font-family: 'Tektur', sans-serif;
+          min-height: 100vh;
+            background: linear-gradient(#281946, #120657);
+            color: #fff;
+        }
+        
+        .button {
+            background: linear-gradient(#427fc4, #0c325e); 
+            color: rgb(0, 0, 0);
+            font-size: 30px; 
+            padding: 10px 20px;
+            margin: 10px;
+            border: none;
+            cursor: pointer;
+            font-family: 'Tektur', sans-serif;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <p style="font-weight: 1000; font-size: 60px; margin-bottom: 15px;">Число Фібоначчі</p>
+        <input style=" font-size: 30px" id="fibInput" type="number" value="10" size="4" >
+        <button onclick="calculateFibonacci()" class="button">Обчислити</button>
+        <button onclick="clearResults()" class="button">Очистити</button>
+        <p  style=" font-size: 30px" id="fibResult">Результат: </p>
+    </div>
+
+    <script>
+        function fibonacciSequence(n) {
+          let fib = [1, 1];
+          for (let i = 2; i < n; i++) {
+            fib[i] = fib[i - 1] + fib[i - 2];
+          }
+          return fib;
+        }
+
+        function printFibonacciSequence(sequence) {
+          let table = "<table border='1'>";
+          for (let i = 0; i < sequence.length; i++) {
+            table += "<tr><td>" + (i + 1) + "</td><td>" + sequence[i] + "</td></tr>";
+          }
+          table += "</table>";
+          return table;
+        }
+
+        function calculateFibonacci() {
+          let input = document.getElementById('fibInput');
+          let n = parseInt(input.value);
+          let result = fibonacciSequence(n);
+          let output = document.getElementById('fibResult');
+          output.innerHTML = 'Результат: <br>' + printFibonacciSequence(result);
+        }
+
+        function clearResults() {
+          let output = document.getElementById('fibResult');
+          output.innerHTML = 'Результат: ';
+        }
+    </script>
+</body>
+</html>

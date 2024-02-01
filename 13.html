@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Міста Японія</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Tektur&display=swap');
+    body{
+        font-family: 'Tektur', sans-serif;
+        min-height: 100vh;
+            background: linear-gradient(#281946, #120657);
+            color: #fff;
+    }
+    button { 
+      color: #fff;
+      padding: 8px 16px;
+      margin-right: 10px;
+      font-family: 'Tektur', sans-serif;
+      background-color: rgb(13, 141, 245);}
+     
+      
+  </style>
+</head>
+<body>
+  <h1>Міста Японія</h1>
+
+  <button onclick="sortPopulation()">Сортувати за населенням</button>
+  <button onclick="sortAlphabetical()">Сортувати за алфавітом</button>
+  <div id="output"></div>
+
+  <script>
+    const capitals = {
+      'Токіо': 8949447,
+      'Йокогама': 3689603,
+      'Осака': 2666371,
+      'Нагоя': 2263907,
+      'Саппоро': 1914434,
+      'Кобе': 1544873,
+      'Кіото': 1474473	,
+      'Фукуока': 1463826	,
+      'Кавасакі': 1425678,
+      'Сайтама': 1222910,
+
+      
+    };
+
+    function showCapitals(capitalEntries) {
+      const outputDiv = document.getElementById('output');
+      outputDiv.innerHTML = '';
+
+      const ul = document.createElement('ul');
+      capitalEntries.forEach(([capital, population]) => {
+        const li = document.createElement('li');
+        li.textContent = `${capital}: ${population.toLocaleString()}`;
+        ul.appendChild(li);
+      });
+      outputDiv.appendChild(ul);
+    }
+
+    function sortPopulation() {
+      const capitalEntries = Object.entries(capitals).sort((a, b) => b[1] - a[1]);
+      showCapitals(capitalEntries);
+    }
+
+    function sortAlphabetical() {
+      const capitalEntries = Object.entries(capitals).sort((a, b) => a[0].localeCompare(b[0]));
+      showCapitals(capitalEntries);
+    }
+
+    
+    showCapitals(Object.entries(capitals));
+  </script>
+</body>
+</html

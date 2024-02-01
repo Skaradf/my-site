@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Я вмію рахувати цифри в числі</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Tektur&display=swap');
+        html, body {
+            height: 100%;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(#281946, #120657);
+            color: #fff;
+            font-family: 'Tektur', sans-serif;
+        }
+        .columns {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100vw;
+            height: 100vh;
+        }
+        .column-content {
+            width: 50%;
+            padding: 20px;
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+            font-size: 25px;
+            background-color: rgba(255, 255, 255, 0.133);
+            border-radius: 20px;
+            margin-top: 50px;
+            text-align: center;
+        }
+        input, .btn {
+            width: 100%;
+            padding: 10px 0;
+            font-size: 16px;
+            color: #070707;
+            margin-bottom: 30px;
+            border: none;
+            border-bottom: 1px solid #070707;
+            outline: none;
+            background: transparent;
+            box-sizing: border-box; /* Added box-sizing to include padding in the width */
+            font-family: 'Tektur', sans-serif;
+        }
+        .btn {
+            background-image: linear-gradient(144deg, #000000, #000000 50%, #000000);
+            border: 0;
+            border-radius: 8px;
+            box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
+            display: flex;
+            justify-content: center;
+            line-height: 1em;
+            text-decoration: none;
+            user-select: none;
+            -webkit-user-select: none;
+            touch-action: manipulation;
+            white-space: nowrap;
+            cursor: pointer;
+            margin: 10px;
+            color: #FFFFFF;
+            font-family: Phantomsans, sans-serif;
+            font-size: 20px;
+            width: 100%;
+            font-family: 'Tektur', sans-serif;
+        }
+        .btn:active,
+        .btn:hover {
+            outline: 0;
+        }
+    </style>
+</head>
+<body>
+    <script>
+    function countDigits() {
+        let number = document.number.numberInput.value;
+        let digitCount = {};
+        for (let i = 0; i < number.length; i++) {
+            let digit = number[i];
+            if (digitCount[digit]) {
+                digitCount[digit]++;
+            } else {
+                digitCount[digit] = 1;
+            }
+        }
+        let digitCountResult = document.getElementById("digitCountResult");
+        digitCountResult.innerHTML = `В цьому числі такі цифри: ${JSON.stringify(digitCount)}`;
+        return false; // Prevent the default form submission behavior
+    }
+    </script>
+    <div class="columns">
+        <div class="column-content">
+            <p><b> Я вмію рахувати цифри в числі.</b></p>
+            <form name="number" onsubmit="return countDigits()">
+                <input class="side" name="numberInput" type="text" value="" placeholder="Введіть ваше число">
+                <div>
+                    <input class="btn" type="submit" value="OK">
+                    <input class="btn" type="reset" name="reset" value="Скинути">
+                </div>
+                <div id="digitCountResult"></div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

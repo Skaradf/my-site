@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Power </title>
+    <style>
+       @import url('https://fonts.googleapis.com/css2?family=Tektur&display=swap');
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(#281946, #120657);
+            color: #fff;
+            
+            font-family: 'Tektur', sans-serif;
+        }
+        .container {
+            display: flex;
+        }
+        .level, .power {
+            width: 50%;
+            padding: 20px;
+        }
+        .power {
+            border-left: 1px solid #fff;
+        }
+        p {
+            text-align: center;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+         input {
+            margin: 10px 0;
+        }
+        .btn{
+          align-items: center;
+  background-image: linear-gradient(144deg,#000000, #000000 50%,#000000);
+  border: 0;
+  border-radius: 8px;
+  box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  display: flex;
+  font-family: Phantomsans, sans-serif;
+  font-size: 20px;
+  justify-content: center;
+  line-height: 1em;
+  width: 30%;
+  padding: 3px;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+  cursor: pointer;
+  margin: 10px;
+        }
+    </style>
+</head>
+<body>
+  <script>
+    function power(){
+    let x=+document.power.a.value;
+    let n=+document.power.b.value;
+    let result=1;
+    let answer=document.getElementById("answer");
+    for(let i =1; i<=n; i++){
+        result=x*result
+    }
+    string=result;
+    answer.innerHTML = string;
+    }
+    
+        </script>
+    
+        <div class="power">
+            <p style="font-weight: 900; font-size: 40px; margin-bottom: 15px;">Розрахунок степеня x<sup>n</sup></sup></p>
+            <form name="power" action="javascript:power()">
+                Основа степеня х дорівнює<input class="side" name="a" type="text" value="" size="4">
+                Поkазник степеня n дорівнює<input class="side" name="b" type="text" value="" size="4">
+                <input class="btn" type="submit" value="Розрахувати">
+                <input class="btn" type="reset" name="reset" value="Скинути">
+            </form>
+            Відповідь: <span id="answer"></span><br/>
+        </div>
+    </div>
+</body>
+</html>

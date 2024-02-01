@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compliments</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: "Quicksand", sans-serif;
+            background: url('background_image.jpg') no-repeat center center fixed;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            min-height: 100vh;
+            background: linear-gradient(#281946, #120657);
+            color: #000000;
+        }
+
+        .container {
+            width: 40%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 6px 20px rgba(0, 0, 0, 0.19);
+            padding: 30px 60px;
+            background-color: rgb(255, 255, 255);
+            text-align: center;
+            border-radius: 20px;
+        }
+
+        input[type="text"] {
+            padding: 10px;
+            font-size: 20px;
+            width: 70%;
+            border: none;
+            border-bottom: 2px solid #070707;
+            margin-bottom: 20px;
+            outline: none;
+        }
+        
+        input[type="submit"], input[type="reset"] {
+            font-size: 18px;
+            padding: 15px 30px;
+            background-color: #450363;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 10px;
+            outline: none;
+        }
+
+        input[type="submit"]:hover, input[type="reset"]:hover {
+            background-color: #391F5B;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        function compliments() {
+            let compliments = ["funny", "smart", "cool", "genius", "clever", "sensible",  "generous", "kind", "creative", "quick-witted",  "determined", "optimistic", "determined"];
+            let animals = ["cat", "leopard", "duck", "rabbit", "monkey", "rhino", "squirrel", "lion", "chicken", "cow", "dog", "deer", "bird" , "kabipara", "hare", "wolf", "fox", "cobra", "mole", "panda", "hamster", "deer",];
+            let colors = ["red", "yellow", "blue", "green", "orange", "purple", "black", "gray", "burgundy", "blue",  "mint", "turquoise"];
+            let number = +document.getElementsByName('a')[0].value;
+            let answer = document.getElementById("answer");
+            let string = '';
+            if (isNaN(number)) {
+                string = "Введите число.";
+            } else {
+                for (let i = 1; i <= number; i++) {
+                    let rand1 = Math.floor(Math.random() * colors.length);
+                    let rand2 = Math.floor(Math.random() * compliments.length);
+                    let rand3 = Math.floor(Math.random() * animals.length);
+                    string += "<p style='color:"+ colors[rand1] + "'>" + i + ") You are as " + compliments[rand2] + " as " + animals[rand3] + "!</p>";
+                }
+            }
+            answer.innerHTML = string;
+        }
+    </script>
+    <div class="container">
+        <h1>Make your day better with compliments</h1>
+        <form name="compliments" action="javascript:compliments()">
+            How many compliments do you want? <input name="a" type="text" value="" size="4"><br>
+            <input type="submit" value="Submit">
+            <input type="reset" name="reset" value="Reset"><br>
+        </form>
+        <span id="answer"></span>
+    </div>
+</body>
+</html>

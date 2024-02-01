@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sword Art Online Quiz</title>
+    <style>
+        body{
+            min-height: 100vh;
+            background: linear-gradient(#281946, #120657);
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <script type="text/javascript">
+        let correctAnswers = 0;
+    
+        let hero1 = prompt('Хто написав ранобе Sword Art Online?', ''); 
+        if (hero1.toLowerCase() === 'Рекі Кавахара') {
+          correctAnswers++;
+          alert('Так, це вірно!');
+        } else {
+          alert('Ви не знаєте? Рекі Кавахара');
+        }
+    
+        let hero2 = prompt('Як звати головного героя у Sword Art Online?', ''); 
+        if (hero2.toLowerCase() === 'Кіріто') {
+          correctAnswers++;
+          alert('Так, це вірно!');
+        } else {
+          alert('Ви не знаєте? Кіріто');
+        }
+    
+        let hero3 = prompt('Як перекладатися Sword Art Online?', ''); 
+        if (hero3.toLowerCase() === 'майстри меча онлайн') {
+          correctAnswers++;
+          alert('Так, це вірно!');
+        } else {
+          alert('Ви не знаєте? Майстри меча онлайн');
+        }
+    
+        let hero4 = prompt('Хто створив аніме Sword Art Online?', ''); 
+        if (hero4.toLowerCase() === 'Рекі Кавахара') {
+          correctAnswers++;
+          alert('Так, це вірно!');
+        } else {
+          alert('Ви не знаєте? Рекі Кавахара');
+        }
+    
+        let hero5 = prompt('Коли зробити повному зануренні у гру?', ''); 
+        if (hero5.includes('2022 році')) {
+          correctAnswers++;
+          alert('Так, це вірно!');
+        } else {
+          alert('Ви не знаєте? 2022 році');
+        }
+    
+        let hero6 = prompt('Яка мета головного героя?', ''); 
+        if (hero6.includes('Вибратися з гри') ) {
+          correctAnswers++;
+          alert('Так, це вірно!');
+        } else {
+          alert('Ви не знаєте? Вибратися з гри');
+        }
+    
+        alert('Ви відповіли правильно на ' + correctAnswers + ' питань.');
+      </script>
+    
+</body>
+</html>
